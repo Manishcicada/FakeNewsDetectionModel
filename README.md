@@ -1,87 +1,159 @@
-📰 Fake News Detection using Machine Learning
-This project aims to detect fake news articles using a variety of natural language processing (NLP) techniques and machine learning models. It explores text preprocessing, feature extraction, and model evaluation to build an effective fake news classifier.
+# 📰 Fake News Detection Using Machine Learning
 
-📂 Project Structure
-The notebook contains the following key sections:
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Made with Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange.svg)](https://jupyter.org/)
 
-Data Loading & Exploration
+> A machine learning project to classify news articles as **real or fake** using text preprocessing, NLP features, and supervised ML models.
 
-Text Preprocessing
+---
 
-Feature Engineering
+## 📚 Table of Contents
 
-Model Training
+- [📖 Introduction](#-introduction)
+- [📂 Project Structure](#-project-structure)
+- [🛠️ Features Extracted](#️-features-extracted)
+- [🤖 Models Used](#-models-used)
+- [📊 Evaluation Metrics](#-evaluation-metrics)
+- [🚀 How to Run](#-how-to-run)
+- [🧪 Requirements](#-requirements)
+- [📈 Sample Results](#-sample-results)
+- [📝 License](#-license)
 
-Hyperparameter Tuning
+---
 
-Model Evaluation
+## 📖 Introduction
 
-Visualization (Confusion Matrix, ROC Curve, SHAP Interpretations)
+Fake news has emerged as a significant challenge in the information age. This project focuses on using NLP and machine learning to build a model capable of distinguishing between real and fake news articles.
 
-📌 Features Used
-TF-IDF Vectorization
+---
 
-Lexical features (average sentence length, punctuation count)
+## 📂 Project Structure
 
-Syntactic features (POS tags, stopwords count)
+```bash
+.
+├── fakenewdetection.ipynb     # Main Jupyter notebook
+├── requirements.txt           # Required dependencies
+├── README.md                  # Project documentation
+└── LiarDataset.csv                      # Dataset (not included)
+```
 
-Semantic features (using TextBlob for polarity/subjectivity)
+---
 
-🧠 Models Trained
-Logistic Regression
+## 🛠️ Features Extracted
 
-Decision Tree
+- Lowercasing, tokenization, stopword removal, stemming
+- TF-IDF vectorization
+- Sentence and word count
+- Punctuation and character analysis
+- POS tag ratios
+- Polarity & subjectivity using `TextBlob`
+- Named entity counts using `spaCy`
 
-Random Forest
+---
 
-Naive Bayes
+## 🤖 Models Used
 
-Support Vector Machine (SVM)
+- Logistic Regression
+- Decision Tree Classifier
+- Random Forest Classifier
+- Support Vector Machine (SVM)
+- Naive Bayes
+- K-Nearest Neighbors
+- XGBoost
 
-XGBoost
+Hyperparameter tuning via:
+- `GridSearchCV`
+- `RandomizedSearchCV`
 
-K-Nearest Neighbors
+---
 
-Hyperparameter tuning is performed using:
+## 📊 Evaluation Metrics
 
-GridSearchCV
+- Accuracy
+- Precision, Recall, F1-score
+- Confusion Matrix
+- ROC-AUC Curve
+- SHAP value-based feature importance visualization
 
-RandomizedSearchCV
+---
 
-📊 Libraries Used
-pandas, numpy for data handling
+## 🚀 How to Run
 
-matplotlib, seaborn for visualization
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Manishcicada/FakeNewsDetectionModel
+   cd FakeNewsDetectionModel
+   ```
 
-nltk, TextBlob, spaCy for NLP
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-scikit-learn for ML models and metrics
+3. Download necessary resources:
+   ```python
+   import nltk
+   nltk.download('punkt')
+   nltk.download('stopwords')
+   nltk.download('averaged_perceptron_tagger')
 
+   import spacy
+   spacy.cli.download("en_core_web_sm")
+   ```
+
+4. Open and run the notebook:
+   ```bash
+   jupyter notebook fakenewdetection.ipynb
+   ```
+
+---
+
+## 🧪 Requirements
+
+```
+pandas
+numpy
+matplotlib
+seaborn
+nltk
+scikit-learn
 xgboost
+textblob
+spacy
+shap
+scipy
+```
 
-shap for model interpretability
+---
 
-📈 Evaluation Metrics
-Accuracy
+## 📈 Sample Results
 
-Confusion Matrix
+| Model             | Accuracy | F1 Score |
+|------------------|----------|----------|
+| Random Forest     | 0.70     | 0.69     |
+| SVM               | 0.64     | 0.63     |
+| Decision Tree     | 0.69     | 0.69     |
+| XGBoost           | 0.74     | 0.73     |
 
-Classification Report (Precision, Recall, F1-score)
+SHAP plots were used for model interpretability.
 
-ROC-AUC Score
+---
 
-SHAP value explanations
+## 📝 License
 
-📌 How to Run
-Clone the repository or download the notebook.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
-Make sure you have Python 3.x installed.
+---
 
-Install dependencies using:
+## 🙌 Acknowledgements
 
-pip install -r requirements.txt
+- [scikit-learn](https://scikit-learn.org/)
+- [NLTK](https://www.nltk.org/)
+- [spaCy](https://spacy.io/)
+- [SHAP](https://shap.readthedocs.io/)
+- [XGBoost](https://xgboost.readthedocs.io/)
 
-Run the notebook using Jupyter or VS Code.
+---
 
-📝 Conclusion
-This project showcases how different ML models perform on fake news classification and highlights the importance of feature engineering and explainability in NLP pipelines.
+> Made with ❤️ by **Manish Sharma**
